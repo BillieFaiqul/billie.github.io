@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Price Check</title>
+	<link rel="stylesheet" type="text/css" href="check.css">
+	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.6.1.js"></script>
+	<script>
+		function getValue() {
+		$(document).ready(function () {
+			$("#check").click(function () {
+				let weight = $("#weight").val();
+		        let service = $("#service").val();
+		        let type = $("#type").val();
+		        let member = $("#membership").val();
+
+		        if (weight == "" || service == "" || type == "" || member == "") {
+		          alert("Please fill all the field");
+		        } else {
+		          var listPrice = [1000, 1200, 900];
+		          var price = listPrice[service] * weight;
+		          if (type == 1) {
+		            price += weight * 200;
+		            $("#price").html(`Total price is Rp. ${price}`);
+		          } else {
+                    $("#price").html(`Total price is Rp. ${price}`);
+                  }
+		          if (member == 0) {
+		            var diskon = price * 0.1;
+		            $("#diskon").html(`Total discount is Rp. ${diskon}`);
+		            price -= diskon;
+		          }
+                  $("#total").html(`Total payment is Rp. ${price}`);
+			}    
+		});
+      });
+   }		
+	
+	</script>
+</head>
+<body>
+	<div class="fContainer">
+		<nav class="wrapper">
+			<div class="brand">
+				<div class="namaawal">Among</div>
+				<div class="namaakhir">Wash</div>
+			</div>
+			<ul class="navigation">
+				<li><img src="img/logo.png" alt="....."></li>
+				<li><a href="beranda.html">Beranda</a></li>
+				<li><a href="check.html">Price Check</a></li>
+				<li><a href="login.html">LogOut</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="hitung">
+			<h1><b>Input to Check The Price</b></h1>
+		<label>Weight</label>
+		<input type="text" id="weight">
+        <br><br>	
+		<label>Service</label>
+		<select id="service" size="1">
+            <option value="0">Wash Dry</option>
+            <option value="1">Wash and Ironing</option>
+            <option value="2">Ironing Only</option>
+        </select>
+        <br><br>	
+		<label>Type</label>
+		<select id="type" size="1">
+            <option value="0">Reguler</option>
+            <option value="1">Express</option>
+        </select>
+        <br><br>	
+        <label>Membership</label>
+		<select id="membership" size="1">
+            <option value="0">Membership</option>
+            <option value="1">Non Membership</option>
+        </select>
+        <br><br>	
+		<div>
+			<p id="price"></p>
+			<p id="diskon"></p>
+			<hr>
+			<p id="total"></p>
+			<button id="check" onclick="getValue()">Check</button>
+		</div>
+	</div>
+	<div id="contact">
+            <div class="wrapp">
+                <footer>
+                    <p>Contact us:</p>
+                    <div class="social-ic">
+                        <a href="https://wa.me/6282234621196"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/billie.f.i_/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="address">
+                        <p>JL Kembang Turi No 26(Kost Andik)</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+</body>
+</html>

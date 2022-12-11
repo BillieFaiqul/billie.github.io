@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="beranda.css">
+	<script src="jquery-3.6.1.js"></script>
+	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+	<script>
+		var i=0;
+		$(document).ready(function(){
+			$('#slider img').hide();
+			showNextImage();
+			setInterval('showNextImage()', 3000);
+		});
+		function showNextImage(){
+			i++;
+			$('#sliderImage'+i).appendTo('#slider').fadeIn(1100).fadeOut(1100);
+			if(i==4){
+				i=0;
+			}
+		};
+	</script>
+</head>
+<body>
+	<div class="fContainer">
+		<nav class="wrapper">
+			<div class="brand">
+				<div class="namaawal">Among</div>
+				<div class="namaakhir">Wash</div>
+			</div>
+			<ul class="navigation">
+				<li><img src="img/logo.png" alt="....."></li>
+				<li><a href="beranda.html">Beranda</a></li>
+				<li><a href="check.html">Price Check</a></li>
+				<li><a href="login.html">LogOut</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="slider">
+		<img id="sliderImage1" src="img/0.png">
+		<img id="sliderImage2" src="img/1.jpeg">
+		<img id="sliderImage3" src="img/2.jpeg">
+		<img id="sliderImage4" src="img/3.jpeg">
+	</div>
+	<div class="tentang">
+		<h2><b>Tentang Kami</b></h2>
+		<p>
+Di masa Pandemi yang sudah semakin membaik, Aktivitas kerja dan diluar rumah semakin sering dilakukan dan tidak sedikit pula yang tidak memiliki waktu yang cukup untuk membersihkan dan merapikan pakaian. Sehingga dengan adanya Laundry kita akan semakin terbantu. Akan tetapi jasa laundry khususnya di surabaya sudah semakin berkembang dan banyak ditemui. Kita tentunya harus lebih cermat dalam memilih jasa laundry yang berkualitas dan sesuai dengan kebutuhan kita.
+		</p>
+		<p>
+Pasalnya ada baju-baju yang kita titipkan disana, dan tidak sedikit baju-baju itu adalah baju favorit, baju kenangan yang memang memiliki cerita tersendiri. Pastinya kita berharap jasa laundry yang kita selain mampu membersihkan baju juga cepat selesai, apalagi bagi para pegawai kantoran yang sibuk dan butuh penyelesaian yang cepat tentunya ini menjadi perhatian bagi mereka. Maka dari itu kita harus bisa memilih Laundry yang tepat.
+		</p>
+		<p>
+Salah satu jasa Laundry yang bisa menjadi rekomendasi terutama di wilayah surabaya adalah Laundry Holic Surabaya. Berlokasi di daerah Pacar Kembang Surabaya, kami Hadir dimasa Pandemi untuk membantu menyelesaikan masalah laundry anda dengan cepat serta ringan dikantong. Terdapat berbagai layanan yang kami sediakan diantaranya adalah dry clean untuk semua pakaian seperti baju manten, jas, jaket, gaun. Selain pakaian kami juga menyediakan layanan untuk laundry sprei, bedcover, boneka dengan segala ukuran, stroller, tikar, karpet, kasur, baju badut, sepatu, tas helm dll.
+		</p>
+		<p>
+Dibawah naungan Asosiasi Laundry Indonesia, Laundry Holic Surabaya memiliki standart dan mutu pelayanan yang lebih teruji dan terpercaya, yang sudah memenuhi syarat Berlaku. Info lebih lanjut seputar pemesanan anda bisa hubungi Customer Service Kami.
+		</p>
+	</div>
+	<div id="contact">
+            <div class="wrapp">
+                <footer>
+                    <p>Contact us:</p>
+                    <div class="social-ic">
+                        <a href="https://wa.me/6282234621196"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/billie.f.i_/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="address">
+                        <p>JL Kembang Turi No 26(Kost Andik)</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+</body>
+</html>
